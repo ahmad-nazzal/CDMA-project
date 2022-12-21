@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="index.css" rel="stylesheet" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>CDM project</title>
+  </head>
+  <body>
+    <div class="base-container">
+      <div class="container">
+        <h1 class="header-text text-center">CDMA Encode/Decode project</h1>
+        <div class="user-container">
+          <div class="user text-white text-center mt-5 fs-2">User 1</div>
+          <div class="row text-white row mt-3">
+            <div class="col-1 fs-5 align-self-center">data bits</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                onkeydown="canvas_()"
+                placeholder="slot 1"
+                maxlength="2"
+                minlength="2"
+                value="-1"
+                id="slot1"
+                class="w-100"
+              />
+            </div>
+            <div class="col-5 justify-content-center">
+              <input
+                type="text"
+                name=""
+                placeholder="slot 2"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                onkeydown="canvas_()"
+                id="slot2"
+                class="w-100"
+              />
+            </div>
+          </div>
+
+          <div class="row text-white row mt-5">
+            <div class="col-1 fs-4 align-self-center">code</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                value="1"
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_()"
+                id="bit1"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                id="bit2"
+                onkeydown="canvas_()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                value="1"
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_()"
+                class="width-1-8"
+                id="bit3"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="-1"
+                minlength="2"
+                onkeydown="canvas_()"
+                id="bit4"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit5"
+                onkeydown="canvas_()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_()"
+                value="-1"
+                id="bit6"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_()"
+                value="-1"
+                id="bit7"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="-1"
+                id="bit8"
+                class="width-1-8"
+                onkeydown="canvas_()"
+              />
+            </div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                value="1"
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_()"
+                class="width-1-8"
+                id="bit9"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit10"
+                onkeydown="canvas_()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit11"
+                class="width-1-8"
+                onkeydown="canvas_()"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_()"
+                maxlength="2"
+                minlength="2"
+                value="-1"
+                id="bit12"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_()"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit13"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                value="-1"
+                placeholder="bit"
+                onkeydown="canvas_()"
+                maxlength="2"
+                minlength="2"
+                id="bit14"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                value="-1"
+                placeholder="bit"
+                onkeydown="canvas_()"
+                maxlength="2"
+                minlength="2"
+                id="bit15"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_()"
+                maxlength="2"
+                value="-1"
+                minlength="2"
+                id="bit16"
+                class="width-1-8"
+              />
+            </div>
+            <canvas class="myCanvas" id="myCanvas">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="user-container">
+          <div class="user text-white text-center mt-5 fs-2">User 2</div>
+          <div class="row text-white row mt-3">
+            <div class="col-1 fs-5 align-self-center">data bits</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                onkeydown="canvas_2()"
+                placeholder="slot 1"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="slot12"
+                class="w-100"
+              />
+            </div>
+            <div class="col-5 justify-content-center">
+              <input
+                type="text"
+                name=""
+                placeholder="slot 2"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                onkeydown="canvas_2()"
+                id="slot22"
+                class="w-100"
+              />
+            </div>
+          </div>
+
+          <div class="row text-white row mt-5">
+            <div class="col-1 fs-4 align-self-center">code</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                id="bit1222"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_2()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                id="bit22"
+                value="-1"
+                onkeydown="canvas_2()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                onkeydown="canvas_2()"
+                class="width-1-8"
+                id="bit32"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_2()"
+                id="bit42"
+                class="width-1-8"
+                value="1"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                id="bit52"
+                onkeydown="canvas_2()"
+                class="width-1-8"
+                value="1"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_2()"
+                value="-1"
+                id="bit62"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_2()"
+                id="bit72"
+                value="1"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit82"
+                class="width-1-8"
+                onkeydown="canvas_2()"
+              />
+            </div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_2()"
+                value="1"
+                class="width-1-8"
+                id="bit92"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                value="-1"
+                maxlength="2"
+                minlength="2"
+                id="bit102"
+                onkeydown="canvas_2()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit112"
+                class="width-1-8"
+                onkeydown="canvas_2()"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_2()"
+                maxlength="2"
+                minlength="2"
+                id="bit122"
+                value="1"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_2()"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit132"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_2()"
+                maxlength="2"
+                value="-1"
+                minlength="2"
+                id="bit142"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_2()"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit152"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_2()"
+                maxlength="2"
+                minlength="2"
+                id="bit162"
+                value="1"
+                class="width-1-8"
+              />
+            </div>
+            <canvas class="myCanvas" id="myCanvas2">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="user-container">
+          <div class="user text-white text-center mt-5 fs-2">User 3</div>
+          <div class="row text-white row mt-3">
+            <div class="col-1 fs-5 align-self-center">data bits</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                onkeydown="canvas_3()"
+                placeholder="slot 1"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                id="slot13"
+                class="w-100"
+              />
+            </div>
+            <div class="col-5 justify-content-center">
+              <input
+                type="text"
+                name=""
+                placeholder="slot 2"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_3()"
+                id="slot23"
+                class="w-100"
+                value="1"
+              />
+            </div>
+          </div>
+
+          <div class="row text-white row mt-5">
+            <div class="col-1 fs-4 align-self-center">code</div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                onkeydown="canvas_3()"
+                id="bit133"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                id="bit233"
+                onkeydown="canvas_3()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_3()"
+                class="width-1-8"
+                id="bit333"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_3()"
+                id="bit433"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit533"
+                onkeydown="canvas_3()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                value="1"
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_3()"
+                id="bit633"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                onkeydown="canvas_3()"
+                id="bit733"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                id="bit833"
+                class="width-1-8"
+                value="1"
+                onkeydown="canvas_3()"
+              />
+            </div>
+            <div class="col-5">
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                onkeydown="canvas_3()"
+                class="width-1-8"
+                id="bit933"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                id="bit1033"
+                value="1"
+                onkeydown="canvas_3()"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                maxlength="2"
+                minlength="2"
+                value="1"
+                id="bit1133"
+                class="width-1-8"
+                onkeydown="canvas_3()"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_3()"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                id="bit1233"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_3()"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                id="bit1333"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_3()"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                id="bit1433"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_3()"
+                value="1"
+                maxlength="2"
+                minlength="2"
+                id="bit1533"
+                class="width-1-8"
+              />
+              <input
+                type="text"
+                name=""
+                placeholder="bit"
+                onkeydown="canvas_3()"
+                maxlength="2"
+                value="1"
+                minlength="2"
+                id="bit1633"
+                class="width-1-8"
+              />
+            </div>
+            <canvas class="myCanvas" id="myCanvas3">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="sender">
+          <div class="row text-white row mt-3">
+            <div class="user text-white text-center mt-5 fs-2">
+              <div class="mt-5">sender for all users</div>
+            </div>
+            <canvas class="myCanvas" id="myCanvas4">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="receiver1">
+          <div class="row text-white row mt-3">
+            <div class="user text-white text-center mt-5 fs-2">
+              <div class="mt-5">receiver 1</div>
+            </div>
+            <canvas class="myCanvas" id="myCanvas5">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="receiver2">
+          <div class="row text-white row mt-3">
+            <div class="user text-white text-center mt-5 fs-2">
+              <div class="mt-5">receiver 2</div>
+            </div>
+            <canvas class="myCanvas" id="myCanvas6">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+        <div class="receiver3">
+          <div class="row text-white row mt-3">
+            <div class="user text-white text-center mt-5 fs-2">
+              <div class="mt-5">receiver 3</div>
+            </div>
+            <canvas class="myCanvas" id="myCanvas7">
+              Your browser does not support the HTML canvas tag.
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
